@@ -37,8 +37,40 @@ public class TextField_Demo extends Frame implements ActionListener
 		b2.setBackground(Color.green);
 		b2.setForeground(Color.blue);
 		
-		b1.addActionListener(this);
-		b2.addActionListener(this);
+		b1.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent e)
+			{
+			String s1= t1.getText();
+			String s2= t2.getText();
+			int a= Integer.parseInt(s1);
+			int b= Integer.parseInt(s2);
+			int c=0;  
+	        if(e.getSource()==b1){  
+	            c=a+b;  
+	        }
+	        String result=String.valueOf(c);  
+	        t3.setText(result);  
+			  
+				
+			}
+				});
+	    b2.addActionListener(new ActionListener()
+		    {
+	        public void actionPerformed(ActionEvent e)
+	        {
+	        String s1= t1.getText();
+	        String s2= t2.getText();
+	        int a= Integer.parseInt(s1);
+	        int b= Integer.parseInt(s2);
+	        int c= 0;  
+              if(e.getSource()==b2){  
+             c=a-b;  
+              }
+            String result=String.valueOf(c);  
+             t3.setText(result);  
+	         }
+		});
 		
 		f.add(l1);
 		f.add(l2);
@@ -59,11 +91,7 @@ public class TextField_Demo extends Frame implements ActionListener
 	        }
 		});
 	}
-	public void actionPerformed(ActionEvent e)
-	{
-		this.setBackground(Color.green);
-		
-	}
+	
 	public static void main(String[] args) 
 	{
 		
