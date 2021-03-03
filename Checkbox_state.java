@@ -34,10 +34,41 @@ public class Checkbox_state extends Frame implements ItemListener
 		l4= new Label();
 		l4.setBounds(150,250,200,40);
 		
-		c1.addItemListener(this);
-		c2.addItemListener(this);
-		c3.addItemListener(this);
-		c4.addItemListener(this);
+		c1.addItemListener(new ItemListener()
+				{
+			public void itemStateChanged(ItemEvent e)
+			{
+				
+				l1.setText(e.getStateChange()==1?"checked":"unchecked");
+				
+			}
+			
+				});
+		c2.addItemListener(new ItemListener()
+		{
+	public void itemStateChanged(ItemEvent e)
+	{
+		l2.setText(e.getStateChange()==1?"checked":"unchecked");
+	}
+	
+		});
+		c3.addItemListener(new ItemListener()
+		{
+	public void itemStateChanged(ItemEvent e)
+	{
+		l3.setText(e.getStateChange()==1?"checked":"unchecked");
+	}
+	
+		});
+		c4.addItemListener(new ItemListener()
+		{
+	public void itemStateChanged(ItemEvent e)
+	{
+		
+		l4.setText(e.getStateChange()==1?"checked":"unchecked");
+	}
+	
+		});
 		
 		add(l1);
 		add(l2);
@@ -58,24 +89,6 @@ public class Checkbox_state extends Frame implements ItemListener
 			    	  System.exit(0);
 			      }
 				});
-	}
-	public void itemStateChanged(ItemEvent e)
-	{
-		
-		if(e.getSource()==c1)
-			l1.setText("Checked");
-		
-		if(e.getSource()==c2)
-			l2.setText("Checked");
-		
-		if(e.getSource()==c3)
-			l3.setText("Checked");
-		
-		if(e.getSource()==c4)
-			l4.setText("Checked");
-	
-		
-		
 	}
 	
 	public static void main(String[] args) 
